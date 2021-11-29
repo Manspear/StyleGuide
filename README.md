@@ -478,55 +478,55 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 		|		|-- Rocks
 		|		|-- Trees
 		|		|-- Bushes
-		|		|--	Flowers
-		|			|--	Lilly_01 (generic, uses material from materiallibrary)
-		|			|	|--	#SM_Lilly_01
-		|			|	|--	Textures
-		|			|	|	|--	#T_Lilly_01_D
-		|			|	|	|--	#T_Lilly_01_N
-		|			|	|	|--	#T_Lilly_01_ORM
+		|		|-- Flowers
+		|			|-- Lilly_01 (generic, uses material from materiallibrary)
+		|			|	|-- #SM_Lilly_01
+		|			|	|-- Textures
+		|			|	|	|-- #T_Lilly_01_D
+		|			|	|	|-- #T_Lilly_01_N
+		|			|	|	|-- #T_Lilly_01_ORM
 		|			|	|
-		|			|	|--	Materials
-		|			|		|--	#MI_Plant_Lilly_01
-		|			|		|--	#MI_Plant_Lilly_01_Evil
-		|			|		|--	#MI_Plant_Lilly_01_Unicorn
+		|			|	|-- Materials
+		|			|		|-- #MI_Plant_Lilly_01
+		|			|		|-- #MI_Plant_Lilly_01_Evil
+		|			|		|-- #MI_Plant_Lilly_01_Unicorn
 		|			|			
-		|			|--	Flower_01 (has its own material)
-		|			|	|--	#SM_Flower_01
-		|			|	|--	Textures
-		|			|	|	|--	#T_Flower_01_D
-		|			|	|	|--	#T_Flower_01_N
-		|			|	|	|--	#T_Flower_01_ORM
+		|			|-- Flower_01 (has its own material)
+		|			|	|-- #SM_Flower_01
+		|			|	|-- Textures
+		|			|	|	|-- #T_Flower_01_D
+		|			|	|	|-- #T_Flower_01_N
+		|			|	|	|-- #T_Flower_01_ORM
 		|			|	|
-		|			|	|--	Materials
-		|			|		|--	#M_Flower_01
-		|			|		|--	#MI_Flower_01_Evil
-		|			|		|--	#MI_Flower_01_Unicorn	
+		|			|	|-- Materials
+		|			|		|-- #M_Flower_01
+		|			|		|-- #MI_Flower_01_Evil
+		|			|		|-- #MI_Flower_01_Unicorn	
 		|			|			
-		|			|--	Rose_01 (uses material from materiallibrary, has animation asset)
-		|				|--	#SK_Rose_01
+		|			|-- Rose_01 (uses material from materiallibrary, has animation asset)
+		|				|-- #SK_Rose_01
 		|				|
-		|				|--	Textures
-		|				|	|--	#T_Rose_01_D
-		|				|	|--	#T_Rose_01_N
-		|				|	|--	#T_Rose_01_ORM
+		|				|-- Textures
+		|				|	|-- #T_Rose_01_D
+		|				|	|-- #T_Rose_01_N
+		|				|	|-- #T_Rose_01_ORM
 		|				|
-		|				|--	Materials
-		|				|	|--	#MI_Plant_Rose_01
+		|				|-- Materials
+		|				|	|-- #MI_Plant_Rose_01
 		|				|
-		|				|--	<a href="#2.7">Animations</a>
-		|					|--	#A_Rose_01
+		|				|-- <a href="#2.7">Animations</a>
+		|					|-- #A_Rose_01
 		|-- AudioLibrary
 		|	|-- Ambient
 		|	|	|-- Ocean
-		|	|		|--	#S_Waves_Cue
-		|	|		|--	#S_Waves	
+		|	|		|-- #S_Waves_Cue
+		|	|		|-- #S_Waves	
 		|	|			
 		|	|-- SoundClasses
-		|			-- #Ambient
-		|			-- #Effects
-		|			-- #Master
-		|			-- #Music
+		|		|-- #Ambient
+		|		|-- #Effects
+		|		|-- #Master
+		|		|-- #Music
 		|   
 		|-- <a href="#2.5">Core</a> (things that are going to get children placed here)
 		|	|-- Editor
@@ -645,7 +645,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 				|-- Animation
 					|-- #ABP_CS2500
 </pre>
-
+	
 The reasons for this structure are listed in the following sub-sections.
 
 ### Sections
