@@ -466,184 +466,184 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 ### 2e1 Example Project Content Structure
 <pre>
 |-- Content
-	|-- <a href="#2.2">WorldOfDynapac</a>
-		|-- Art
-		|	|-- Rural
-		|	|	|-- Buildings
-		|	|	|-- Rocks
-		|	|	|-- Trees
-		|	|
-		|	|-- Desert
-		|		|-- Buildings
-		|		|-- Rocks
-		|		|-- Trees
-		|		|-- Bushes
-		|		|-- Flowers
-		|			|-- Lilly_01 (generic, uses material from materiallibrary)
-		|			|	|-- #SM_Lilly_01
-		|			|	|-- Textures
-		|			|	|	|-- #T_Lilly_01_D
-		|			|	|	|-- #T_Lilly_01_N
-		|			|	|	|-- #T_Lilly_01_ORM
-		|			|	|
-		|			|	|-- Materials
-		|			|		|-- #MI_Plant_Lilly_01
-		|			|		|-- #MI_Plant_Lilly_01_Evil
-		|			|		|-- #MI_Plant_Lilly_01_Unicorn
-		|			|			
-		|			|-- Flower_01 (has its own material)
-		|			|	|-- #SM_Flower_01
-		|			|	|-- Textures
-		|			|	|	|-- #T_Flower_01_D
-		|			|	|	|-- #T_Flower_01_N
-		|			|	|	|-- #T_Flower_01_ORM
-		|			|	|
-		|			|	|-- Materials
-		|			|		|-- #M_Flower_01
-		|			|		|-- #MI_Flower_01_Evil
-		|			|		|-- #MI_Flower_01_Unicorn	
-		|			|			
-		|			|-- Rose_01 (uses material from materiallibrary, has animation asset)
-		|				|-- #SK_Rose_01
-		|				|
-		|				|-- Textures
-		|				|	|-- #T_Rose_01_D
-		|				|	|-- #T_Rose_01_N
-		|				|	|-- #T_Rose_01_ORM
-		|				|
-		|				|-- Materials
-		|				|	|-- #MI_Plant_Rose_01
-		|				|
-		|				|-- <a href="#2.7">Animations</a>
-		|					|-- #A_Rose_01
-		|-- AudioLibrary
-		|	|-- Ambient
-		|	|	|-- Ocean
-		|	|		|-- #S_Waves_Cue
-		|	|		|-- #S_Waves	
-		|	|			
-		|	|-- SoundClasses
-		|		|-- #Ambient
-		|		|-- #Effects
-		|		|-- #Master
-		|		|-- #Music
-		|   
-		|-- <a href="#2.5">Core</a> (things that are going to get children placed here)
-		|	|-- Editor
-		|	|-- Framework
-		|	|	|-- <a href="#2.1.2">Gamemodes</a>
-		|	|	|	-- #GM_Main
-		|	|	|	-- #GM_Entry
-		|	|	|-- #PC_Main
-		|	|	|-- #GS_Main
-		|   |	|
-		|	|	|-- <!-- Multiple roots (not using "base" in asset name): -->
-		|	|	|-- #BP_VRPawn
-		|	|	|-- #BP_ShowroomPawn
-		|	|	|-- #BP_ShowroomPawn_Evil
-		|	|	|-- #BP_WalkingCharacter
-		|	|	|
-		|	|	|-- <!-- Or single root: -->
-		|	|	|-- #BP_BaseChar
-		|	|	|-- #BP_BaseChar_Enemy
-		|	|	|-- #BP_BaseChar_Enemy_Goblin
-		|	|	|-- #BP_BaseChar_Enemy_Goblin_Grunt
-		|	|	
-		|	|-- Placeables
-		|	|	|-- Cameras
-		|	|		|-- #BP_Camera
-		|	|		|-- #BP_CineCamera (Only used when not controlled by the user)
-		|	|	|-- Weather
-		|	|		|-- #BP_Weather
-		|	|
-		|	|-- Vehicles
-		|		|-- #BP_Vehicle
-		|		|-- #BPI_Vehicle (put as high as possible in implementation-chain)
-		|		|-- #ST_Vehicle (put as high as possible in implementation-chain)
-		|		
-		|-- Effects
-		|	|-- Common
-		|	|-- Electrical
-		|	|	|-- #SM_Lightning
-		|	|	|-- #PS_Lightning
-		|	|	|-- Textures
-		|	|	|-- Materials
-		|	|-- Fire
-		|	|-- Weather	
-		|	
-		|-- <a href="#2.4">Maps</a>
-		|	|-- Entry (all projects always start game on Entry level, from here go to game level, levels it loads should not be dependent on this)
-		|	|-- Vaxjo_P
-		|	|-- Vaxjo_Audio
-		|	|-- Vaxjo_Lighting
-		|	|-- Vaxjo_Geo
-		|	|-- Vaxjo_Gameplay
-		|	|-- VaxjoVR_P
-		|	|-- VaxjoVR_Gameplay
-		|	
-		|-- <a href="#2.8">MaterialLibrary</a>
-		|	|-- Metal
-		|	|-- Paint
-		|	|-- Wathering
-		|	|-- Utility
-		|	|	|-- #MF_DotProduct
-		|	|	|-- #RT_RearViewMirror
-		|	|
-		|	|-- Organic
-		|		|-- #M_Plant
-		|	
-		|-- Placeables
-		|	|-- Cameras
-		|	|	|-- #BP_Camera_Overview
-		|	|
-		|	|-- Weather
-		|	|	|-- #BP_Weather_Rain (blueprint with rain particle effect in it that starts when enter trigger box)
-		|	|	|-- #BP_SunSky
-		|	|	|-- #BP_DayNightCycle
-		|	|
-		|	|-- ExplosionBarrel
-		|		|-- #BP_ExplosionBarrel
-		|		
-		|-- UI
-		|	|-- Textures
-		|	|-- Materials
-		|	|-- Fonts
-		|	|-- HUD
-		|	|	|-- WB_HealthBar
-		|	|
-		|	|-- MainMenu
-		|		|-- WB_MainMenu	
-		|
-		|-- Vehicles
-			|-- Common
-			|	|-- Blueprints
-			|	|	|-- #BP_Vehicle_Roller
-			|	|	|-- #BP_Vehicle_Paver
-			|	|	|-- #BPI_Screed
-			|	|
-			|	|-- Textures
-			|	|	|-- #T_DynapacRAL201_D
-			|	|	|-- #T_DynapacRAL201_N
-			|	|
-			|	|-- Materials
-			|		|-- #M_DynapacRAL201
-			|
-			|-- <a href="#2.1.3">CS2500</a>
-				|-- Blueprints
-				|	|-- #BP_Vehicle_Roller_CS2500
-				|
-				|-- Audio
-				|	|-- S_CS2500_Honk_Cue
-				|	|-- S_CS2500_Honk
-				|
-				|-- Textures
-				|-- Materials
-				|-- Meshes
-				|	|-- #SM_CS2500
-				|	|-- #SK_CS2500
-				|
-				|-- Animation
-					|-- #ABP_CS2500
+    |-- <a href="#2.2">WorldOfDynapac</a>
+        |-- Art
+        |    |-- Rural
+        |    |    |-- Buildings
+        |    |    |-- Rocks
+        |    |    |-- Trees
+        |    |
+        |    |-- Desert
+        |        |-- Buildings
+        |        |-- Rocks
+        |        |-- Trees
+        |        |-- Bushes
+        |        |-- Flowers
+        |            |-- Lilly_01 (generic, uses material from materiallibrary)
+        |            |    |-- #SM_Lilly_01
+        |            |    |-- Textures
+        |            |    |    |-- #T_Lilly_01_D
+        |            |    |    |-- #T_Lilly_01_N
+        |            |    |    |-- #T_Lilly_01_ORM
+        |            |    |
+        |            |    |-- Materials
+        |            |        |-- #MI_Plant_Lilly_01
+        |            |        |-- #MI_Plant_Lilly_01_Evil
+        |            |        |-- #MI_Plant_Lilly_01_Unicorn
+        |            |            
+        |            |-- Flower_01 (has its own material)
+        |            |    |-- #SM_Flower_01
+        |            |    |-- Textures
+        |            |    |    |-- #T_Flower_01_D
+        |            |    |    |-- #T_Flower_01_N
+        |            |    |    |-- #T_Flower_01_ORM
+        |            |    |
+        |            |    |-- Materials
+        |            |        |-- #M_Flower_01
+        |            |        |-- #MI_Flower_01_Evil
+        |            |        |-- #MI_Flower_01_Unicorn    
+        |            |            
+        |            |-- Rose_01 (uses material from materiallibrary, has animation asset)
+        |                |-- #SK_Rose_01
+        |                |
+        |                |-- Textures
+        |                |    |-- #T_Rose_01_D
+        |                |    |-- #T_Rose_01_N
+        |                |    |-- #T_Rose_01_ORM
+        |                |
+        |                |-- Materials
+        |                |    |-- #MI_Plant_Rose_01
+        |                |
+        |                |-- <a href="#2.7">Animations</a>
+        |                    |-- #A_Rose_01
+        |-- AudioLibrary
+        |    |-- Ambient
+        |    |    |-- Ocean
+        |    |        |-- #S_Waves_Cue
+        |    |        |-- #S_Waves    
+        |    |            
+        |    |-- SoundClasses
+        |        |-- #Ambient
+        |        |-- #Effects
+        |        |-- #Master
+        |        |-- #Music
+        |   
+        |-- <a href="#2.5">Core</a> (things that are going to get children placed here)
+        |    |-- Editor
+        |    |-- Framework
+        |    |    |-- <a href="#2.1.2">Gamemodes</a>
+        |    |    |    -- #GM_Main
+        |    |    |    -- #GM_Entry
+        |    |    |-- #PC_Main
+        |    |    |-- #GS_Main
+        |   |    |
+        |    |    |-- <!-- Multiple roots (not using "base" in asset name): -->
+        |    |    |-- #BP_VRPawn
+        |    |    |-- #BP_ShowroomPawn
+        |    |    |-- #BP_ShowroomPawn_Evil
+        |    |    |-- #BP_WalkingCharacter
+        |    |    |
+        |    |    |-- <!-- Or single root: -->
+        |    |    |-- #BP_BaseChar
+        |    |    |-- #BP_BaseChar_Enemy
+        |    |    |-- #BP_BaseChar_Enemy_Goblin
+        |    |    |-- #BP_BaseChar_Enemy_Goblin_Grunt
+        |    |    
+        |    |-- Placeables
+        |    |    |-- Cameras
+        |    |        |-- #BP_Camera
+        |    |        |-- #BP_CineCamera (Only used when not controlled by the user)
+        |    |    |-- Weather
+        |    |        |-- #BP_Weather
+        |    |
+        |    |-- Vehicles
+        |        |-- #BP_Vehicle
+        |        |-- #BPI_Vehicle (put as high as possible in implementation-chain)
+        |        |-- #ST_Vehicle (put as high as possible in implementation-chain)
+        |        
+        |-- Effects
+        |    |-- Common
+        |    |-- Electrical
+        |    |    |-- #SM_Lightning
+        |    |    |-- #PS_Lightning
+        |    |    |-- Textures
+        |    |    |-- Materials
+        |    |-- Fire
+        |    |-- Weather    
+        |    
+        |-- <a href="#2.4">Maps</a>
+        |    |-- Entry (all projects always start game on Entry level, from here go to game level, levels it loads should not be dependent on this)
+        |    |-- Vaxjo_P
+        |    |-- Vaxjo_Audio
+        |    |-- Vaxjo_Lighting
+        |    |-- Vaxjo_Geo
+        |    |-- Vaxjo_Gameplay
+        |    |-- VaxjoVR_P
+        |    |-- VaxjoVR_Gameplay
+        |    
+        |-- <a href="#2.8">MaterialLibrary</a>
+        |    |-- Metal
+        |    |-- Paint
+        |    |-- Wathering
+        |    |-- Utility
+        |    |    |-- #MF_DotProduct
+        |    |    |-- #RT_RearViewMirror
+        |    |
+        |    |-- Organic
+        |        |-- #M_Plant
+        |    
+        |-- Placeables
+        |    |-- Cameras
+        |    |    |-- #BP_Camera_Overview
+        |    |
+        |    |-- Weather
+        |    |    |-- #BP_Weather_Rain (blueprint with rain particle effect in it that starts when enter trigger box)
+        |    |    |-- #BP_SunSky
+        |    |    |-- #BP_DayNightCycle
+        |    |
+        |    |-- ExplosionBarrel
+        |        |-- #BP_ExplosionBarrel
+        |        
+        |-- UI
+        |    |-- Textures
+        |    |-- Materials
+        |    |-- Fonts
+        |    |-- HUD
+        |    |    |-- WB_HealthBar
+        |    |
+        |    |-- MainMenu
+        |        |-- WB_MainMenu    
+        |
+        |-- Vehicles
+            |-- Common
+            |    |-- Blueprints
+            |    |    |-- #BP_Vehicle_Roller
+            |    |    |-- #BP_Vehicle_Paver
+            |    |    |-- #BPI_Screed
+            |    |
+            |    |-- Textures
+            |    |    |-- #T_DynapacRAL201_D
+            |    |    |-- #T_DynapacRAL201_N
+            |    |
+            |    |-- Materials
+            |        |-- #M_DynapacRAL201
+            |
+            |-- <a href="#2.1.3">CS2500</a>
+                |-- Blueprints
+                |    |-- #BP_Vehicle_Roller_CS2500
+                |
+                |-- Audio
+                |    |-- S_CS2500_Honk_Cue
+                |    |-- S_CS2500_Honk
+                |
+                |-- Textures
+                |-- Materials
+                |-- Meshes
+                |    |-- #SM_CS2500
+                |    |-- #SK_CS2500
+                |
+                |-- Animation
+                    |-- #ABP_CS2500
 </pre>
 	
 The reasons for this structure are listed in the following sub-sections.
