@@ -536,7 +536,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |    |    |    -- #GM_Entry
         |    |    |-- #PC_Main
         |    |    |-- #GS_Main
-        |   |    |
+        |    |    |
         |    |    |-- <!-- Multiple roots (not using "base" in asset name): -->
         |    |    |-- #BP_VRPawn
         |    |    |-- #BP_ShowroomPawn
