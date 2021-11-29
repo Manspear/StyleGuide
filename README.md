@@ -309,8 +309,8 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Blueprint Function Library | BPFL_   |            |                                  |
 | Blueprint Interface     | BPI_       |            |                                  |
 | Blueprint Macro Library | BPML_      |            | Do not use macro libraries if possible. |
-| Enumeration             | E          |            | No underscore.                   |
-| Structure               | F or S     |            | No underscore.                   |
+| Enumeration             | E_         |            | No underscore.                   |
+| Structure               | ST_        |            | No underscore.                   |
 | Tutorial Blueprint      | TBP_       |            |                                  |
 | Widget Blueprint        | WBP_       |            |                                  |
 
@@ -508,12 +508,19 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |   |-- Weathering
         |-- Placeables
         |   |-- Pickups
-        |-- Weapons
+	|-- UI
+	|   |-- HUD
+	    |   |-- HealthBar
+	|   |-- MainMenu
+        |   |-- Textures
+        |-- Vehicles
             |-- Common
-            |-- Pistols
-            |   |-- DesertEagle
-            |   |-- RocketPistol
-            |-- Rifles
+            |-- Rollers
+            |   |-- CA3500
+            |   |-- DD8000
+            |-- Pavers
+	    |   |-- QQ3600
+            |   |-- TD5000
 </pre>
 
 The reasons for this structure are listed in the following sub-sections.
