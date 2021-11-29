@@ -466,19 +466,19 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 ### 2e1 Example Project Content Structure
 <pre>
 |-- Content
-    |-- <a href="#2.2">WorldOfDynapac</a>
-        |-- Art
-        |   |-- Rural
-        |   |   |-- Buildings
-        |   |   |-- Rocks
-        |   |   |-- Trees
+	|-- <a href="#2.2">WorldOfDynapac</a>
+		|-- Art
+		|	|-- Rural
+		|	|	|-- Buildings
+		|	|	|-- Rocks
+		|	|	|-- Trees
 		|	|
-        |   |-- Desert
-        |       |-- Buildings
-        |       |-- Rocks
-        |       |-- Trees
-        |       |-- Bushes
-		|	 	|--	Flowers
+		|	|-- Desert
+		|		|-- Buildings
+		|		|-- Rocks
+		|		|-- Trees
+		|		|-- Bushes
+		|		|--	Flowers
 		|			|--	Lilly_01 (generic, uses material from materiallibrary)
 		|			|	|--	#SM_Lilly_01
 		|			|	|--	Textures
@@ -523,10 +523,10 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 		|	|		|--	#S_Waves	
 		|	|			
 		|	|-- SoundClasses
-		|		|-- #Ambient
-		|		|-- #Effects
-		|		|-- #Master
-		|		|-- #Music
+		|			-- #Ambient
+		|			-- #Effects
+		|			-- #Master
+		|			-- #Music
 		|   
 		|-- <a href="#2.5">Core</a> (things that are going to get children placed here)
 		|	|-- Editor
@@ -536,7 +536,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 		|	|	|	-- #GM_Entry
 		|	|	|-- #PC_Main
 		|	|	|-- #GS_Main
-        |   |	|
+		|   |	|
 		|	|	|-- <!-- Multiple roots (not using "base" in asset name): -->
 		|	|	|-- #BP_VRPawn
 		|	|	|-- #BP_ShowroomPawn
@@ -613,7 +613,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 		|	|
 		|	|-- MainMenu
 		|		|-- WB_MainMenu	
-        |
+		|
 		|-- Vehicles
 			|-- Common
 			|	|-- Blueprints
