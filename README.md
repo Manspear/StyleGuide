@@ -1408,7 +1408,8 @@ It is up to the project whether to snap based on a power of 2 grid or on a base 
 <a name="s-collision"></a>
 ### 4.4 All Meshes Must Have Collision
 
-Regardless of whether an asset is going to be used for collision in a level, all meshes should have proper collision defined. This helps the engine with things such as bounds calculations, occlusion, and lighting. Collision should also be well-formed to the asset.
+Regardless of whether an asset is going to be used for collision in a level, all meshes should have proper collision defined. This helps the engine with things such as bounds calculations, occlusion, and lighting. Collision should also be well-formed to the asset.Preferably convex collision due to concave being more performance heavy. One should rather split up the collision into multiple convexe collisions to avoid using concave.
+
 
 <a name="4.5"></a>
 <a name="s-scaled"></a>
