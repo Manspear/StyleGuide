@@ -537,17 +537,28 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |    |    |-- #PC_Main
         |    |    |-- #GS_Main
         |    |    |
-        |    |    |-- <!-- Multiple roots (not using "base" in asset name): -->
+        |    |    |-- <!-- Multiple roots (Not using "base" in asset name. Root is almost empty, components for input added in children.) -->
         |    |    |-- #BP_VRPawn
-        |    |    |-- #BP_ShowroomPawn
-        |    |    |-- #BP_ShowroomPawn_Evil
-        |    |    |-- #BP_WalkingCharacter
+	|    |    |-- #BP_VRPawn_Main
+	|    |    |-- #BP_VRPawn_Balcony
+        |    |    |-- #BP_TouchPawn
+	|    |    |-- #BP_TouchPawn_Main
+        |    |    |-- #BP_TouchPawn_Balcony
+        |    |    |-- #BP_DesktopPawn
+	|    |    |-- #BP_DesktopPawn_Main
         |    |    |
         |    |    |-- <!-- Or single root: -->
         |    |    |-- #BP_BaseChar
+	|    |    |-- #BP_BaseChar_Friendly
+	|    |    |-- #BP_BaseChar_Friendly_Wizard
         |    |    |-- #BP_BaseChar_Enemy
         |    |    |-- #BP_BaseChar_Enemy_Goblin
         |    |    |-- #BP_BaseChar_Enemy_Goblin_Grunt
+	|    |    |
+	|    |    |-- #BPC_InputActionPan
+	|    |    |-- #BPC_InputActionZoom
+	|    |    |-- #BPC_InputActionOrbit
+	|    |    |-- #BPC_InputActionDragOnFloor (?)
         |    |    
         |    |-- Placeables
         |    |    |-- Cameras
