@@ -555,10 +555,11 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |    |    |-- #BP_BaseChar_Enemy_Goblin
         |    |    |-- #BP_BaseChar_Enemy_Goblin_Grunt
 	|    |    |
-	|    |    |-- #BPC_InputActionPan
-	|    |    |-- #BPC_InputActionZoom
-	|    |    |-- #BPC_InputActionOrbit
-	|    |    |-- #BPC_InputActionDragOnFloor (?)
+	|    |    |-- (Command-components with functionality for certain input actions. Which component to call is decided in the pawn-blueprint.)
+	|    |    |-- #BPC_CommandPan (Use in eg. BP_TouchPawn_Main and BP_DesktopPawn_Main, but not in VR_Pawn_Main)
+	|    |    |-- #BPC_CommandZoom
+	|    |    |-- #BPC_CommandOrbit
+	|    |    |-- #BPC_CommandDragOnFloor
         |    |    
         |    |-- Placeables
         |    |    |-- Cameras
