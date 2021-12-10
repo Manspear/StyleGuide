@@ -537,7 +537,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |    |    |-- #PC_Main
         |    |    |-- #GS_Main
         |    |    |
-        |    |    |-- <!-- Multiple roots (Not using "base" in asset name. Root is almost empty, components for input added in children.) -->
+        |    |    |-- (Multiple roots. Not using "base" in asset name. Root is almost empty, components for input added in children.)
         |    |    |-- #BP_VRPawn
 	|    |    |-- #BP_VRPawn_Main
 	|    |    |-- #BP_VRPawn_Balcony
@@ -547,7 +547,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |    |    |-- #BP_DesktopPawn
 	|    |    |-- #BP_DesktopPawn_Main
         |    |    |
-        |    |    |-- <!-- Or single root: -->
+        |    |    |-- (Or single root.)
         |    |    |-- #BP_BaseChar
 	|    |    |-- #BP_BaseChar_Friendly
 	|    |    |-- #BP_BaseChar_Friendly_Wizard
