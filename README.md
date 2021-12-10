@@ -46,7 +46,7 @@ An `Identifier` is anything that resembles or serves as a "name". For example, t
 <a name="terms-cases"></a>
 ##### Cases
 
-There are a few different ways you can `CaseWordsWhenNaming`. Here are some common casing types:
+There are a few different ways you can `CaseWordsWhenNaming`. Here are some common casing types (we use PascalCase!):
 
 > ###### PascalCase
 >
