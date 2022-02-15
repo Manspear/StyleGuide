@@ -832,6 +832,8 @@ Remember: Blueprinting badly bears blunders, beware! (Phrase by [KorkuVeren](htt
 
 ### Sections
 
+> 3.0 [User Experience](#bp-userexperience)
+
 > 3.1 [Compiling](#bp-compiling)
 
 > 3.2 [Variables](#bp-vars)
@@ -840,6 +842,11 @@ Remember: Blueprinting badly bears blunders, beware! (Phrase by [KorkuVeren](htt
 
 > 3.4 [Graphs](#bp-graphs)
 
+
+<a name="3.0"></a>
+<a name="bp-userexperience"></a>
+### 3.0 User Experience
+asdasd
 <a name="3.1"></a>
 <a name="bp-compiling"></a>
 ### 3.1 Compiling
