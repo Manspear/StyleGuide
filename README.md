@@ -100,7 +100,7 @@ Gamemakin LLC is not a lawyer, but please don't introduce illegal actions and be
 
 In any `Identifier` of any kind, **never** use the following unless absolutely forced to:
 
-* White space of any kind
+* White space of any kind (except for material parameters, there white space MUST be used to separate words)
 * Backward slashes `\`
 * Symbols i.e. `#!@$%`
 * Any Unicode character
