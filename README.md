@@ -851,12 +851,8 @@ Remember: Blueprinting badly bears blunders, beware! (Phrase by [KorkuVeren](htt
 Only make tweakable variables visible (exposed) in class defaults of any object, hide "temp" bp variables
 
 Tweak Exposing Prio Order
-	1. When click on actor in scene, show all tweak-variables in editor details panel. Don't show if variable is supposed to be shared between all instances.
-	2. 
-
-Tweak Exposing Prio Order
-1. Editor Details Panel: Don't show if variable is supposed to be shared between all instances.
-2. Class Default: 
+1. `Editor Details Panel`: Don't show if variable is supposed to be shared between all instances.
+2. `Class Default`: 
 
 <a name="3.1"></a>
 <a name="bp-compiling"></a>
