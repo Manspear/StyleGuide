@@ -853,7 +853,7 @@ Only make tweakable variables visible (exposed) in class defaults of any object,
 Tweak Exposing Prio Order
 1. `Editor Details Panel`: Don't show if variable is supposed to be shared between all instances (all BP_TreasureChests).
 2. `Class Default`: Don't show if variable is supposed to be shared between all users of component (all BPC_Locked).
-3. `Component Default`: To tweak variable, got to open the BPC (BPC_Locked), and edit class defaults there. This ensures that all users (chests/doors) of that component get the changes. 
+3. `BPC Class Default`: This ensures that all locked objects shares the changes. 
 
 <a name="3.1"></a>
 <a name="bp-compiling"></a>
