@@ -851,9 +851,9 @@ Remember: Blueprinting badly bears blunders, beware! (Phrase by [KorkuVeren](htt
 Only make tweakable variables visible (exposed) in class defaults of any object, hide "temp" bp variables from designers eyes.
 
 Tweak Exposing Prio Order
-1. `Editor Details Panel`: Don't show if variable is supposed to be shared between all instances (all BP_TreasureChests).
-2. `Class Default`: Don't show if variable is supposed to be shared between all users of component (all BPC_Locked).
-3. `BPC Class Default`: This ensures that all locked objects shares the changes. 
+1. `Editor Details Panel`: If variable is tweakable on instances (a BP_TreasureChest in level).
+2. `Class Default`: If variable tweaks is shared between all instances  (all BP_TreasureChests).
+3. `BPC Class Default`: If variable tweaks is shared between all users of the BPC (all BPs using BPC_Locked)
 
 <a name="3.1"></a>
 <a name="bp-compiling"></a>
