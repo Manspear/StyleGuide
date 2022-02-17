@@ -872,14 +872,18 @@ BP_WeaponActor
 -- Weapon-Ability displaying (ComboStrike, SpecialAttack for enemies)
 - Triggers "did damage" code in GA_MeleeBase
 - Uses DT_SwingEffects
+
 GA_MeleeBase
 - Chaining of sections in montage
 - Calculates damaging stat application (like roll dice for bleed)
 - Pops actionqueue when ability finished / interrupted
+
 DT_SwingEffects
 - Contains swing trails, sounds and grunt sounds
+
 DT_VFXData 
 - Contains VFX, Sound and how they will be played
+
 DT_VFXSources 
 - Combines DT_VFXDatas so multiple can be called at once.
 
