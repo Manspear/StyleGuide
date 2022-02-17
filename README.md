@@ -881,9 +881,8 @@ GA_MeleeBase (Strömbrytare(Knapp))
 - Calculates damaging stat application (like roll dice for bleed)
 - Pops actionqueue when ability finished / interrupted
 
-DT_SwingEffects
+DT_SwingEffects (better name: DT_EffectsDuringActiveWeaponCollision)
 - Contains swing trails, sounds and grunt sounds
-
 	
 To Delete
 DT_VFXData 
