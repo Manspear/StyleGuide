@@ -880,9 +880,10 @@ GA_MeleeBase
 DT_SwingEffects
 - Contains swing trails, sounds and grunt sounds
 
+	
+To Delete
 DT_VFXData 
 - Contains VFX, Sound and how they will be played
-
 DT_VFXSources 
 - Combines DT_VFXDatas so multiple can be called at once.
 
