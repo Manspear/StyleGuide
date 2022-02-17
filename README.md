@@ -858,6 +858,11 @@ Tweak Exposing Prio Order
 	
 **3.0.2 Components**
 Only use components when it contains functionality that will be reused in multiple different classes.
+**3.0.2.1 Naming**
+Name so you know what you get when you get variable
+Static mesh component: SM_Name
+Skeletal mesh component: SK_Name
+
 	
 **3.0.3 Interfaces**
 Only use Interfaces when tons of different classes want to communicate with this blueprint (to prevent hard coupling). Also use it when many different types of classes wants to act as the same type of thing (like Widgets, many want to be able to be highlighted).
