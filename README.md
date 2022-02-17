@@ -865,6 +865,7 @@ Only use Interfaces when tons of different classes want to communicate with this
 **3.0.4 Information Should Be Gathered In One Place**
 Try to keep code regarding one thing in one place. 
 
+**SYFTE: Vart ska saker ligga? GCue eller i WeaponActor / BP_Character?** 
 
 BP_WeaponActor (Lampa)
 - Grants PlayerAbilities that changes per-weapon(Normal, Special, etc)
