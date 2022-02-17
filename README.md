@@ -855,7 +855,37 @@ Tweak Exposing Prio Order
 1. `Editor Details Panel`: If variable is tweakable on instances (a BP_TreasureChest in level).
 2. `Class Default`: If variable tweaks is shared between all instances  (all BP_TreasureChests).
 3. `BPC Class Default`: If variable tweaks is shared between all users of the BPC (all BPs using BPC_Locked)
+	
+**3.0.2 Components**
+Only use components when it contains functionality that will be reused in multiple different classes.
+	
+**3.0.3 Interfaces**
+Only use Interfaces when tons of different classes want to communicate with this blueprint (to prevent hard coupling). Also use it when many different types of classes wants to act as the same type of thing (like Widgets, many want to be able to be highlighted).
+	
+**3.0.4 Information Should Be Gathered In One Place**
+Try to keep code regarding one thing in one place. 
 
+
+BP_WeaponActor
+- PlayerAbilities that changes per-weapon(Normal, Special, etc)
+-- Grants abilities
+-- Weapon-Ability displaying (ComboStrike, SpecialAttack for enemies)
+- Triggers "did damage" code in GA_MeleeBase
+- Uses DT_SwingEffects
+GA_MeleeBase
+- Chaining of sections in montage
+- Calculates damaging stat application (like roll dice for bleed)
+- Pops actionqueue when ability finished / interrupted
+DT_SwingEffects
+- Contains swing trails, sounds and grunt sounds
+DT_VFXData 
+- Contains VFX, Sound and how they will be played
+DT_VFXSources 
+- Combines DT_VFXDatas so multiple can be called at once.
+
+GA_MeleeBase(Start AM_) -> AM_Strike(Activate Colliders, tweaks damage) -> BP_WeaponActor(OnColliderTriggerEvent) -> GA_MeleeBase(Upon TriggerEvent, Apply Damage)
+	
+	
 <a name="3.1"></a>
 <a name="bp-compiling"></a>
 ### 3.1 Compiling
