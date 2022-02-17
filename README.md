@@ -872,7 +872,7 @@ BP_WeaponActor (Lampa)
 - Triggers "did damage" code in GA_MeleeBase
 - Uses DT_SwingEffects
 
-BP_Character (Lamopa)
+BP_Character (Lampa)
 - Effects, wait to be triggered by GA_MeleeBase
 	
 GA_MeleeBase (Strömbrytare(Knapp))
