@@ -868,7 +868,7 @@ Try to keep code regarding one thing in one place.
 
 BP_WeaponActor
 - PlayerAbilities that changes per-weapon(Normal, Special, etc)
-- ...Grants abilities
+	- Grants abilities
 - ...Weapon-Ability displaying (ComboStrike, SpecialAttack for enemies)
 - Triggers "did damage" code in GA_MeleeBase
 - Uses DT_SwingEffects
