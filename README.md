@@ -866,13 +866,16 @@ Only use Interfaces when tons of different classes want to communicate with this
 Try to keep code regarding one thing in one place. 
 
 
-BP_WeaponActor
+BP_WeaponActor (Lampa)
 - Grants PlayerAbilities that changes per-weapon(Normal, Special, etc)
-	- Weapon-Ability displaying (ComboStrike, SpecialAttack for enemies)
+- Effects, wait to be triggered by GA_MeleeBase or AM_'s
 - Triggers "did damage" code in GA_MeleeBase
 - Uses DT_SwingEffects
 
-GA_MeleeBase
+BP_Character (Lamopa)
+- Effects, wait to be triggered by GA_MeleeBase
+	
+GA_MeleeBase (Strömbrytare(Knapp))
 - Chaining of sections in montage
 - Calculates damaging stat application (like roll dice for bleed)
 - Pops actionqueue when ability finished / interrupted
