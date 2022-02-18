@@ -861,6 +861,9 @@ Tweak Exposing Prio Order
 	
 **3.0.2 Components**
 Only use components when it contains functionality that will be reused in multiple different classes.
+If several components do similar things, combine them into one component, with bools that turn features On / Off. This makes it easier to think, and you don't mix them up with each other, CharacterMovement controller is a good example of this, it has bools for "CanFly", "CanWalk" etc. instead of being split up into separate components.
+blir enklare att tänka. Man blandar inte ihop dom när de är för lika
+	
 **3.0.2.1 Naming**
 Name so you know what you get when you get variable
 Static mesh component: SM_Name
