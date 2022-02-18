@@ -849,7 +849,10 @@ Remember: Blueprinting badly bears blunders, beware! (Phrase by [KorkuVeren](htt
 
 **3.0.1 Exposing of Variables**
 Only make tweakable variables visible (exposed) in class defaults of any object, hide "temp" bp variables from designers eyes.
+Keep in mind what others want to tweak most, expose and make those variables higher up in order in a nice category.
+For things that are less likely to be tweaked (like by you or other coders) you can skip exposing them in class defaults, and change the value directly on the BPC
 To make a BPC variable visible in the class defaults of the actor its attached to, you make a variable in the actor and set the BPC variable to it in the actor's BeginPlay / Construction script (unless there is a c++ way to automatically expose a BPC variable in the class defaults of it's actor).
+
 	
 Tweak Exposing Prio Order
 1. `Editor Details Panel`: If variable is tweakable on instances (a BP_TreasureChest in level).
