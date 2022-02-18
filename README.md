@@ -870,6 +870,11 @@ Only use Interfaces when tons of different classes want to communicate with this
 **3.0.4 Information Should Be Gathered In One Place**
 Try to keep code regarding one thing in one place. 
 
+**3.0.5 Principles**
+1. **Systematic** Things should follow as close to UE common standard as possible. If none exist, make one and be true to it.
+2. **Simplistic** For clarity of how things work among all team members including yourself. You will forget._ If you pracitce kiss of the dragon at lunch how will it go att sparring? Will you even remember it? We practice half guard and elbow escapes, the basics, then there's a chance they get used. Black belt techniques are for black belts.Fable 1, Valheim and Skyrim AI don't require black belt implementations. That's for horizon zero dawn with a 60 people team with 20y experience. _
+3. **Smart Implementation** Scalable solutions. But keep end user in mind
+	
 **SYFTE: Vart ska saker ligga? GCue eller i WeaponActor / BP_Character?** 
 
 BP_WeaponActor (Lampa)
