@@ -875,7 +875,7 @@ Try to keep code regarding one thing in one place.
 BP->GA->GE->GCue
 2. **Simplistic** For clarity of how things work among all team members including yourself. You will forget.
 If you pracitce kiss of the dragon at lunch how will it go att sparring? Will you even remember it? We practice half guard and elbow escapes, the basics, then there's a chance they get used. Black belt techniques are for black belts. Fable 1, Valheim and Skyrim AI don't require black belt implementations. That's for horizon zero dawn with a 60 people team with 20y experience. 
-3. **Smart Implementation** Scalable solutions. But keep end user in mind
+3. **Smart Implementation** Scalable solutions. If it breaks against above points it's not worth it.
 	
 **SYFTE: Vart ska saker ligga? GCue eller i WeaponActor / BP_Character?** 
 
