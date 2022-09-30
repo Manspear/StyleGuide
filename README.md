@@ -1,8 +1,10 @@
+## 0. Principles
+
 <a name="3.0"></a>
 <a name="bp-userexperience"></a>
-### 3.0 User Experience
+### 0.0 User Experience
 
-**3.0.1 Exposing of Variables**
+**0.0.1 Exposing of Variables**
 Only make tweakable variables visible (exposed) in class defaults of any object, hide "temp" bp variables from designers eyes.
 Keep in mind what others want to tweak most, expose and make those variables higher up in order in a nice category.
 For things that are less likely to be tweaked (like by you or other coders) you can skip exposing them in class defaults, and change the value directly on the BPC
@@ -14,24 +16,24 @@ Tweak Exposing Prio Order
 2. `Class Default`: If variable tweaks is shared between all instances  (all BP_TreasureChests).
 3. `BPC Class Default`: If variable tweaks is shared between all users of the BPC (all BPs using BPC_Locked)
 	
-**3.0.2 Components**
+**0.0.2 Components**
 Only use components when it contains functionality that will be reused in multiple different classes.
 If several components do similar things, combine them into one component, with bools that turn features On / Off. This makes it easier to think, and you don't mix them up with each other, CharacterMovement controller is a good example of this, it has bools for "CanFly", "CanWalk" etc. instead of being split up into separate components.
 blir enklare att tänka. Man blandar inte ihop dom när de är för lika
 	
-**3.0.2.1 Naming**
+**0.0.2.1 Naming**
 Name so you know what you get when you get variable
 Static mesh component: SM_Name
 Skeletal mesh component: SK_Name
 
 	
-**3.0.3 Interfaces**
+**0.0.3 Interfaces**
 Only use Interfaces when tons of different classes want to communicate with this blueprint (to prevent hard coupling). Also use it when many different types of classes wants to act as the same type of thing (like Widgets, many want to be able to be highlighted).
 	
-**3.0.4 Information Should Be Gathered In One Place**
+**0.0.4 Information Should Be Gathered In One Place**
 Try to keep code regarding one thing in one place. 
 
-**3.0.5 Principles**
+**0.0.5 Principles**
 1. **Systematic** Things should follow as close to UE common standard as possible. If none exist, make one and be true to it.
 BP->GA->GE->GCue
 2. **Simplistic** For clarity of how things work among all team members including yourself. You will forget.
@@ -66,7 +68,6 @@ DT_VFXSources
 GA_MeleeBase(Start AM_) -> AM_Strike(Activate Colliders, tweaks damage) -> BP_WeaponActor(OnColliderTriggerEvent) -> GA_MeleeBase(Upon TriggerEvent, Apply Damage)
 
 
-## 0. Principles
 
 These principles have been adapted from [idomatic.js style guide](https://github.com/rwaldron/idiomatic.js/).
 
