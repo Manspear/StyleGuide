@@ -1,48 +1,71 @@
-## Important Terminology
+<a name="3.0"></a>
+<a name="bp-userexperience"></a>
+### 3.0 User Experience
 
-<a name="terms-level-map"></a>
-##### Levels/Maps
+**3.0.1 Exposing of Variables**
+Only make tweakable variables visible (exposed) in class defaults of any object, hide "temp" bp variables from designers eyes.
+Keep in mind what others want to tweak most, expose and make those variables higher up in order in a nice category.
+For things that are less likely to be tweaked (like by you or other coders) you can skip exposing them in class defaults, and change the value directly on the BPC
+To make a BPC variable visible in the class defaults of the actor its attached to, you make a variable in the actor and set the BPC variable to it in the actor's BeginPlay / Construction script (unless there is a c++ way to automatically expose a BPC variable in the class defaults of it's actor).
 
-The word 'map' generally refers to what the average person calls a 'level' and may be used interchangeably. See this term's history [here](https://en.wikipedia.org/wiki/Level_(video_gaming)).
+	
+Tweak Exposing Prio Order
+1. `Editor Details Panel`: If variable is tweakable on instances (a BP_TreasureChest in level).
+2. `Class Default`: If variable tweaks is shared between all instances  (all BP_TreasureChests).
+3. `BPC Class Default`: If variable tweaks is shared between all users of the BPC (all BPs using BPC_Locked)
+	
+**3.0.2 Components**
+Only use components when it contains functionality that will be reused in multiple different classes.
+If several components do similar things, combine them into one component, with bools that turn features On / Off. This makes it easier to think, and you don't mix them up with each other, CharacterMovement controller is a good example of this, it has bools for "CanFly", "CanWalk" etc. instead of being split up into separate components.
+blir enklare att tänka. Man blandar inte ihop dom när de är för lika
+	
+**3.0.2.1 Naming**
+Name so you know what you get when you get variable
+Static mesh component: SM_Name
+Skeletal mesh component: SK_Name
 
-##### Identifiers
-An `Identifier` is anything that resembles or serves as a "name". For example, the name of an asset, or the name of a material later, or a blueprint property, a variable, or a folder name, or for a data table row name, etc...
+	
+**3.0.3 Interfaces**
+Only use Interfaces when tons of different classes want to communicate with this blueprint (to prevent hard coupling). Also use it when many different types of classes wants to act as the same type of thing (like Widgets, many want to be able to be highlighted).
+	
+**3.0.4 Information Should Be Gathered In One Place**
+Try to keep code regarding one thing in one place. 
 
-<a name="terms-cases"></a>
-##### Cases
+**3.0.5 Principles**
+1. **Systematic** Things should follow as close to UE common standard as possible. If none exist, make one and be true to it.
+BP->GA->GE->GCue
+2. **Simplistic** For clarity of how things work among all team members including yourself. You will forget.
+If you pracitce kiss of the dragon at lunch how will it go att sparring? Will you even remember it? We practice half guard and elbow escapes, the basics, then there's a chance they get used. Black belt techniques are for black belts. Fable 1, Valheim and Skyrim AI don't require black belt implementations. That's for horizon zero dawn with a 60 people team with 20y experience. 
+3. **Smart Implementation** Scalable solutions. If it breaks against above points it's not worth it. Filip should be able to use/change it without asking for help.
+	
+**SYFTE: Vart ska saker ligga? GCue eller i WeaponActor / BP_Character?** 
 
-There are a few different ways you can `CaseWordsWhenNaming`. Here are some common casing types (we use PascalCase!):
+BP_WeaponActor (Lampa)
+- Grants PlayerAbilities that changes per-weapon(Normal, Special, etc)
+- Effects, wait to be triggered by GA_MeleeBase or AM_'s
+- Triggers "did damage" code in GA_MeleeBase
+- Uses DT_SwingEffects
 
-> ###### PascalCase
->
-> Capitalize every word and remove all spaces, e.g. `DesertEagle`, `StyleGuide`, `ASeriesOfWords`.
-> 
-> ###### camelCase
->
-> The first letter is always lowercase but every following word starts with uppercase, e.g. `desertEagle`, `styleGuide`, `aSeriesOfWords`.
->
-> ###### Snake_case
->
-> Words can arbitrarily start upper or lowercase but words are separated by an underscore, e.g. `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
+BP_Character (Lampa)
+- Effects, wait to be triggered by GA_MeleeBase
+	
+GA_MeleeBase (Strömbrytare(Knapp))
+- Chaining of sections in montage
+- Calculates damaging stat application (like roll dice for bleed)
+- Pops actionqueue when ability finished / interrupted
 
-<a name="terms-var-prop"></a>
-##### Variables / Properties
+DT_SwingEffects (better name: DT_EffectsDuringActiveWeaponCollision)
+- Contains swing trails, sounds and grunt sounds
+	
+To Delete
+DT_VFXData 
+- Contains VFX, Sound and how they will be played
+DT_VFXSources 
+- Combines DT_VFXDatas so multiple can be called at once.
 
-The words 'variable' and 'property' in most contexts are interchangable. If they are both used together in the same context however:
+GA_MeleeBase(Start AM_) -> AM_Strike(Activate Colliders, tweaks damage) -> BP_WeaponActor(OnColliderTriggerEvent) -> GA_MeleeBase(Upon TriggerEvent, Apply Damage)
 
-<a name="terms-property"></a>
-###### Property 
-Usually refers to a variable defined in a class. For example, if `BP_Barrel` had a variable `bExploded`, `bExploded` may be referred to as a property of `BP_Barrel`. 
 
-When in the context of a class, it is often used to imply accessing previously defined data.
-
-<a name="terms-variable"></a>
-###### Variable 
-Usually refers to a variable defined as a function argument or a local variable inside a function.
-
-When in the context of a class, it is often used to convey discussion about its definition and what it will hold.
-
-<a name="0"></a>
 ## 0. Principles
 
 These principles have been adapted from [idomatic.js style guide](https://github.com/rwaldron/idiomatic.js/).
@@ -840,76 +863,7 @@ Remember: Blueprinting badly bears blunders, beware! (Phrase by [KorkuVeren](htt
 
 > 3.3 [Functions](#bp-functions)
 
-> 3.4 [Graphs](#bp-graphs)
-
-
-<a name="3.0"></a>
-<a name="bp-userexperience"></a>
-### 3.0 User Experience
-
-**3.0.1 Exposing of Variables**
-Only make tweakable variables visible (exposed) in class defaults of any object, hide "temp" bp variables from designers eyes.
-Keep in mind what others want to tweak most, expose and make those variables higher up in order in a nice category.
-For things that are less likely to be tweaked (like by you or other coders) you can skip exposing them in class defaults, and change the value directly on the BPC
-To make a BPC variable visible in the class defaults of the actor its attached to, you make a variable in the actor and set the BPC variable to it in the actor's BeginPlay / Construction script (unless there is a c++ way to automatically expose a BPC variable in the class defaults of it's actor).
-
-	
-Tweak Exposing Prio Order
-1. `Editor Details Panel`: If variable is tweakable on instances (a BP_TreasureChest in level).
-2. `Class Default`: If variable tweaks is shared between all instances  (all BP_TreasureChests).
-3. `BPC Class Default`: If variable tweaks is shared between all users of the BPC (all BPs using BPC_Locked)
-	
-**3.0.2 Components**
-Only use components when it contains functionality that will be reused in multiple different classes.
-If several components do similar things, combine them into one component, with bools that turn features On / Off. This makes it easier to think, and you don't mix them up with each other, CharacterMovement controller is a good example of this, it has bools for "CanFly", "CanWalk" etc. instead of being split up into separate components.
-blir enklare att tänka. Man blandar inte ihop dom när de är för lika
-	
-**3.0.2.1 Naming**
-Name so you know what you get when you get variable
-Static mesh component: SM_Name
-Skeletal mesh component: SK_Name
-
-	
-**3.0.3 Interfaces**
-Only use Interfaces when tons of different classes want to communicate with this blueprint (to prevent hard coupling). Also use it when many different types of classes wants to act as the same type of thing (like Widgets, many want to be able to be highlighted).
-	
-**3.0.4 Information Should Be Gathered In One Place**
-Try to keep code regarding one thing in one place. 
-
-**3.0.5 Principles**
-1. **Systematic** Things should follow as close to UE common standard as possible. If none exist, make one and be true to it.
-BP->GA->GE->GCue
-2. **Simplistic** For clarity of how things work among all team members including yourself. You will forget.
-If you pracitce kiss of the dragon at lunch how will it go att sparring? Will you even remember it? We practice half guard and elbow escapes, the basics, then there's a chance they get used. Black belt techniques are for black belts. Fable 1, Valheim and Skyrim AI don't require black belt implementations. That's for horizon zero dawn with a 60 people team with 20y experience. 
-3. **Smart Implementation** Scalable solutions. If it breaks against above points it's not worth it. Filip should be able to use/change it without asking for help.
-	
-**SYFTE: Vart ska saker ligga? GCue eller i WeaponActor / BP_Character?** 
-
-BP_WeaponActor (Lampa)
-- Grants PlayerAbilities that changes per-weapon(Normal, Special, etc)
-- Effects, wait to be triggered by GA_MeleeBase or AM_'s
-- Triggers "did damage" code in GA_MeleeBase
-- Uses DT_SwingEffects
-
-BP_Character (Lampa)
-- Effects, wait to be triggered by GA_MeleeBase
-	
-GA_MeleeBase (Strömbrytare(Knapp))
-- Chaining of sections in montage
-- Calculates damaging stat application (like roll dice for bleed)
-- Pops actionqueue when ability finished / interrupted
-
-DT_SwingEffects (better name: DT_EffectsDuringActiveWeaponCollision)
-- Contains swing trails, sounds and grunt sounds
-	
-To Delete
-DT_VFXData 
-- Contains VFX, Sound and how they will be played
-DT_VFXSources 
-- Combines DT_VFXDatas so multiple can be called at once.
-
-GA_MeleeBase(Start AM_) -> AM_Strike(Activate Colliders, tweaks damage) -> BP_WeaponActor(OnColliderTriggerEvent) -> GA_MeleeBase(Upon TriggerEvent, Apply Damage)
-	
+> 3.4 [Graphs](#bp-graphs)	
 	
 <a name="3.1"></a>
 <a name="bp-compiling"></a>
