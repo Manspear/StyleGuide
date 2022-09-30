@@ -1,6 +1,6 @@
 ## 0. Principles
 
-<a name="3.0"></a>
+<a name="0.0"></a>
 <a name="bp-userexperience"></a>
 ### 0.0 User Experience
 
@@ -67,7 +67,14 @@ DT_VFXSources
 
 GA_MeleeBase(Start AM_) -> AM_Strike(Activate Colliders, tweaks damage) -> BP_WeaponActor(OnColliderTriggerEvent) -> GA_MeleeBase(Upon TriggerEvent, Apply Damage)
 
+**0.0.6 Breadcrumbs**
+Easy to trace to the rest of the code 
 
+**0.0.7 Common Sense Code**
+The first event taking place should be placed top left
+
+**0.0.8 Comment Titles**
+Keep it clear and short for Tracing Code Order
 
 These principles have been adapted from [idomatic.js style guide](https://github.com/rwaldron/idiomatic.js/).
 
