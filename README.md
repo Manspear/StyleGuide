@@ -71,7 +71,7 @@ GA_MeleeBase(Start AM_) -> AM_Strike(Activate Colliders, tweaks damage) -> BP_We
 Easy to trace to the rest of the code.
 Examples:
 - If you get an animation file named "A_Flying" then the AnimBP node using that animation should be named "Flying"
-- Think of more examples.
+- Names of variables and concepts consistent, avoid synonyms. (EnemyHP, PlayerStatusBar, BossHealthbar -> just pick statusbar)
 
 **0.0.7 Common Sense Code**
 The first event taking place should be placed top left
