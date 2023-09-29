@@ -1437,9 +1437,17 @@ This is a subjective check on a per-project basis, however all assets should be 
 <a name="5"></a>
 <a name="Niagara"></a>
 <a name="ng"></a>
-## 5. Niagara
+## 5. Particle Systems
 
-This section will focus on Niagara assets and their internals.
+All packages are to be in the DownloadedAssets plugin
+
+When you want to use a VFX from a package in game do this: 
+1. DownloadedAssets content->VFX_Vefects_SpellEffects->Shared->Skills->NS_BuffCast
+2. drag and drop into:
+Unaki->Art->VFX->VFX_Vefects_SpellEffects
+choose advance copy
+
+In this way, our VFX folder will clearly state which packages our stuff came from, and the packages will share assets, and it will be easy to copy in new stuff
 
 ### Sections
 
