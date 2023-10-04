@@ -1,6 +1,7 @@
-## 0. Principles
 Unaki 1 is an experiment where we try various approaches to naming, pipelines, etc. Wasp is an experiment for tweaking workflow.
 Unaki 2 is the game where we solidify the project structure, using what we've learned to make the best one.
+
+## 0. Principles
 
 <a name="0.0"></a>
 <a name="bp-userexperience"></a>
